@@ -1,0 +1,9 @@
+.app {
+  border: solid rgb(255, 165, 0);
+  width: 60vw;
+  height: 30vw;
+  margin: auto;
+  margin-top: calc(50vh - 15vw);
+  background-color: rgb(179, 179, 179);
+
+}
