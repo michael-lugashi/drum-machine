@@ -3,9 +3,9 @@ function DrumPad(props) {
  return (
   <div className="drum-pad">
    {console.log(keyCode)}
-   {console.log(keyTrigger)}
    {console.log(id)}
    {console.log(url)}
+   {keyTrigger}
   </div>
  );
 }
