@@ -3,4 +3,13 @@
  width: 30vw;
  height: 24vw;
  background-color: blue;
+ display: grid;
+ grid-template-columns: repeat(3, 1fr);
+ grid-template-rows: repeat(3, 1fr);
+ grid-column-gap: 1vw;
+ grid-row-gap: 1vw;
+}
+
+.drum-pad {
+ background-color: rgb(255, 0, 0);
 }
