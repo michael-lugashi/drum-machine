@@ -1,5 +1,28 @@
 .settings {
-    width: 20vw;
-    height: 24vw;
-    background-color: yellow;
+ width: 20vw;
+ height: 24vw;
+ background-color: yellow;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: space-evenly;
+}
+
+.bank-switch {
+ width: 5vw;
+ height: 2vw;
+ background-color: black;
+ display: flex;
+}
+
+.knob {
+ transition: 0.5s;
+ height: 1.7vw;
+ width: 2.5vw;
+ background-color: blue;
+}
+
+.header {
+    margin: 0;
+    font-size: 1vw
 }

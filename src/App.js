@@ -6,14 +6,14 @@ import KeysContainer from './core/KeysContainer';
 import Settings from './core/Settings';
 
 function App() {
- const [keys, setKeys] = useState([]);
- useEffect(() => {
-  setKeys(bankOne);
- }, []);
+ const [keys, setKeys] = useState(bankOne);
+//  useEffect(() => {
+//   setKeys(bankOne);
+//  }, []);
  return (
   <div className="app" id="display">
    <KeysContainer keys={keys} />
-   <Settings/>
+   <Settings setKeys={setKeys}/>
   </div>
  );
 }

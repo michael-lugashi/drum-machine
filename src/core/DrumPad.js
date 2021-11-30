@@ -1,10 +1,11 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { useEffect } from 'react/cjs/react.development';
 
 function DrumPad(props) {
  const { keyTrigger, id, url } = props.keyInfo;
- const sound = new Audio(url);
+//  const sound = new Audio(url);
  const [selected, setSelected] = useState(false);
+ const soundEl = useRef(null)
  const changeColor = () => {
   setSelected(true);
   setTimeout(() => {
@@ -16,7 +17,7 @@ function DrumPad(props) {
   document.addEventListener('keyup', (e) => {
    if (e.key.toUpperCase() === keyTrigger.toUpperCase()) {
     changeColor();
-    sound.play();
+    soundEl.current.play();
    }
   });
  }, []);
@@ -27,11 +28,12 @@ function DrumPad(props) {
    id={id}
    onClick={() => {
     changeColor();
-    sound.play();
+    soundEl.current.play();
    }}
    className="drum-pad"
   >
    {keyTrigger}
+   <audio ref={soundEl} className="clip" id={keyTrigger} src={url}></audio>
   </div>
  );
 }
