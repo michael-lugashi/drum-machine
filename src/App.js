@@ -21,6 +21,7 @@ function App() {
     setLastKey={setLastKey}
    />
    <Settings
+    setLastKey={setLastKey}
     setPower={setPower}
     power={power}
     volume={volume}

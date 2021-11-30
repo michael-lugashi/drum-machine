@@ -10,7 +10,7 @@ function Settings(props) {
    <PowerSwitch power={props.power} setPower={props.setPower} />
    <DisplayBar power={props.power} lastKey={props.lastKey} />
    <VolumeBar volume={props.volume} setVolume={props.setVolume} />
-   <BankSwitch setKeys={props.setKeys} />
+   <BankSwitch setLastKey={props.setLastKey} setKeys={props.setKeys} />
   </div>
  );
 }

@@ -6,7 +6,8 @@ function BankSwitch(props) {
  const [isBankOne, setIsBankOne] = useState(true);
  useEffect(() => {
   props.setKeys(isBankOne ? bankOne : bankTwo);
- }, [isBankOne, props]);
+  props.setLastKey(isBankOne ? 'Heater Kit' : 'SM Piano Kit')
+ }, [isBankOne]);
 
  return (
   <div>
