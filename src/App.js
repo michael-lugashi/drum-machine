@@ -9,9 +9,22 @@ function App() {
  const [lastKey, setLastKey] = useState('');
  const [volume, setVolume] = useState(0.3);
  const [power, setPower] = useState(true);
- //  useEffect(() => {
- //   setKeys(bankOne);
- //  }, []);
+
+ const handleKeyPress = (keys) => {
+  document.removeEventListener('keydown', keyPress);
+  document.addEventListener('keydown', keyPress);
+  function keyPress(e) {
+   for (const { keyTrigger, id } of keys) {
+       console.log(id)
+    if (e.key.toUpperCase() === keyTrigger.toUpperCase()) {
+     document.getElementById(id).click();
+    }
+   }
+  }
+ };
+  useEffect(() => {
+   handleKeyPress(keys)
+  }, [keys]);
  return (
   <div className="app" id="display">
    <KeysContainer

@@ -1,5 +1,4 @@
 import { useState, useRef } from 'react';
-import { useEffect } from 'react/cjs/react.development';
 
 function DrumPad(props) {
  const { keyTrigger, id, url } = props.keyInfo;
@@ -20,16 +19,6 @@ function DrumPad(props) {
    setSelected(false);
   }, 160);
  };
-
- useEffect(() => {
-  document.addEventListener('keyup', (e) => {
-   if (e.key.toUpperCase() === keyTrigger.toUpperCase()) {
-    changeColor();
-    props.setLastKey(id);
-    soundEl.current.play();
-   }
-  });
- }, []);
 
  return (
   <div
