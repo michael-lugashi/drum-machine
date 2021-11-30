@@ -26,3 +26,9 @@
     margin: 0;
     font-size: 1vw
 }
+.display-bar{
+    width: 10vw;
+    background-color: grey;
+    height: 3vw;
+    font-size: 1.25vw;
+}

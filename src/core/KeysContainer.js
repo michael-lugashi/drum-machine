@@ -5,7 +5,7 @@ function KeysContainer(props) {
  return (
   <div className='keys-container'>
    {props.keys.map((key) => {
-    return <DrumPad key={key.id} keyInfo={key} />;
+    return <DrumPad setLastKey={props.setLastKey} key={key.id} keyInfo={key} />;
    })}
   </div>
  );
