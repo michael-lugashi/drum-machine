@@ -23,12 +23,41 @@
 }
 
 .header {
-    margin: 0;
-    font-size: 1vw
+ margin: 0;
+ font-size: 1vw;
 }
-.display-bar{
-    width: 10vw;
-    background-color: grey;
-    height: 3vw;
-    font-size: 1.25vw;
+.display-bar {
+ width: 10vw;
+ background-color: grey;
+ height: 3vw;
+ font-size: 1.25vw;
+}
+.volume-bar {
+ width: 14vw;
+ background-color: rgb(71, 71, 71);
+
+ -webkit-appearance: none;
+ box-shadow: .2vw .2vw .2vw #000000/* Add cool effects to your sliders! */
+ 
+ /* background: transparent; */
+}
+.volume-bar::-ms-track {
+ cursor: pointer;
+
+ /* Hides the slider so custom styles can be added */
+ /* background: transparent; */
+ /* border-color: transparent; */
+ /* color: transparent; */
+}
+
+.volume-bar::-webkit-slider-thumb {
+ -webkit-appearance: none;
+ /* border: 1px solid #000000; */
+ height: 2.5vw;
+ width: .75vw;
+ background: blue;
+ cursor: pointer;
+ margin-top: -1vw;
+ margin-bottom: -1vw; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+ box-shadow: .2vw .2vw .2vw #000000 /* Add cool effects to your sliders! */
 }

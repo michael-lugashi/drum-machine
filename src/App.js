@@ -6,14 +6,28 @@ import Settings from './core/Settings';
 
 function App() {
  const [keys, setKeys] = useState(bankOne);
- const [lastKey, setLastKey] = useState('')
-//  useEffect(() => {
-//   setKeys(bankOne);
-//  }, []);
+ const [lastKey, setLastKey] = useState('');
+ const [volume, setVolume] = useState(0.3);
+ const [power, setPower] = useState(true);
+ //  useEffect(() => {
+ //   setKeys(bankOne);
+ //  }, []);
  return (
   <div className="app" id="display">
-   <KeysContainer keys={keys} setLastKey={setLastKey}/>
-   <Settings lastKey={lastKey} setKeys={setKeys}/>
+   <KeysContainer
+    power={power}
+    volume={volume}
+    keys={keys}
+    setLastKey={setLastKey}
+   />
+   <Settings
+    setPower={setPower}
+    power={power}
+    volume={volume}
+    setVolume={setVolume}
+    lastKey={lastKey}
+    setKeys={setKeys}
+   />
   </div>
  );
 }

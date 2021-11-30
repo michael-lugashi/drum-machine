@@ -17,20 +17,22 @@ function DrumPad(props) {
   document.addEventListener('keyup', (e) => {
    if (e.key.toUpperCase() === keyTrigger.toUpperCase()) {
     changeColor();
-    props.setLastKey(id)
+    props.setLastKey(id);
     soundEl.current.play();
    }
   });
  }, []);
-
  return (
   <div
    style={{ backgroundColor: selected ? 'yellow' : 'red' }}
    id={id}
    onClick={() => {
-    props.setLastKey(id);
-    changeColor();
-    soundEl.current.play();
+    if (props.power) {
+     soundEl.current.volume = props.volume;
+     props.setLastKey(id);
+     changeColor();
+     soundEl.current.play();
+    }
    }}
    className="drum-pad"
   >

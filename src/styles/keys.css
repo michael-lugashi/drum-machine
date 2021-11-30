@@ -12,4 +12,5 @@
 
 .drum-pad {
  background-color: rgb(255, 0, 0);
+ box-shadow: .2vw .2vw .2vw #000000
 }
