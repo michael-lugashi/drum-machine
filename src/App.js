@@ -22,9 +22,11 @@ function App() {
    }
   }
  };
+ 
   useEffect(() => {
    handleKeyPress(keys)
   }, [keys]);
+
  return (
   <div className="app" id="display">
    <KeysContainer
