@@ -12,7 +12,7 @@ function BankSwitch(props) {
   <div>
    <h3 className="header">Bank {isBankOne ? 'One' : 'Two'}</h3>
    <div
-    className="bank-switch"
+    className="switch"
     style={{ justifyContent: isBankOne ? 'flex-start' : 'flex-end' }}
     onClick={() => {
      setIsBankOne(!isBankOne);

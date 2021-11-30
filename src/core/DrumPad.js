@@ -3,9 +3,17 @@ import { useEffect } from 'react/cjs/react.development';
 
 function DrumPad(props) {
  const { keyTrigger, id, url } = props.keyInfo;
- //  const sound = new Audio(url);
- const [selected, setSelected] = useState(false);
+ const [selected, setSelected] = useState(false); //works with power on
+ const [pressed, setPressed] = useState(false); // works with power off
  const soundEl = useRef(null);
+
+ const press = () => {
+  setPressed(true);
+  setTimeout(() => {
+   setPressed(false);
+  }, 160);
+ };
+
  const changeColor = () => {
   setSelected(true);
   setTimeout(() => {
@@ -22,16 +30,21 @@ function DrumPad(props) {
    }
   });
  }, []);
+
  return (
   <div
-   style={{ backgroundColor: selected ? 'yellow' : 'red' }}
+   style={{
+    backgroundColor: selected ? 'rgb(255, 215, 0)' : 'rgb(133, 133, 133)',
+    boxShadow: pressed ? '0 0 0 #000000' : '.2vw .2vw .2vw #000000',
+   }}
    id={id}
    onClick={() => {
+    press();
     if (props.power) {
      soundEl.current.volume = props.volume;
-     props.setLastKey(id);
      changeColor();
      soundEl.current.play();
+     props.setLastKey(id);
     }
    }}
    className="drum-pad"

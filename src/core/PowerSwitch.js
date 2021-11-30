@@ -1,10 +1,9 @@
 function PowerSwitch(props) {
-
  return (
   <div>
    <h3 className="header">Power {props.power? 'On' : 'Off'}</h3>
    <div
-    className="bank-switch"
+    className="switch"
     style={{ justifyContent: props.power ? 'flex-start' : 'flex-end' }}
     onClick={() => {
      props.setPower(!props.power);

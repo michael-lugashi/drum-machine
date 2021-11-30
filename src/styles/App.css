@@ -1,5 +1,5 @@
 .app {
- border: solid rgb(255, 165, 0);
+ border: solid rgb(255, 165, 0) 0.3vw;
  width: 60vw;
  height: 30vw;
  margin: auto;
@@ -8,4 +8,5 @@
  display: flex;
  align-items: center;
  justify-content: space-evenly;
+ box-shadow: 0.1vw 1vw 2vw #000000;
 }
