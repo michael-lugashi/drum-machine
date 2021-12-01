@@ -10,23 +10,6 @@ function App() {
  const [volume, setVolume] = useState(0.3);
  const [power, setPower] = useState(true);
 
- //  const handleKeyPress = (keys) => {
- //   document.removeEventListener('keydown', keyPress);
- //   document.addEventListener('keydown', keyPress);
- //   function keyPress(e) {
- //    for (const { keyTrigger, id } of keys) {
- //        console.log(id)
- //     if (e.key.toUpperCase() === keyTrigger.toUpperCase()) {
- //      document.getElementById(keyTrigger).click();
- //     }
- //    }
- //   }
- //  };
-
- //   useEffect(() => {
- //    handleKeyPress(keys)
- //   }, [keys]);
-
  document.addEventListener('keydown', keyPress);
  function keyPress(e) {
   for (const { keyTrigger } of keys) {
