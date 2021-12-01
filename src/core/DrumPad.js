@@ -26,7 +26,7 @@ function DrumPad(props) {
     backgroundColor: selected ? 'rgb(255, 215, 0)' : 'rgb(133, 133, 133)',
     boxShadow: pressed ? '0 0 0 #000000' : '.2vw .2vw .2vw #000000',
    }}
-   id={id}
+   id={keyTrigger}
    onClick={() => {
     press();
     if (props.power) {

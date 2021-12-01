@@ -1,6 +1,6 @@
 import './styles/App.css';
 import bankOne from './model/BankOne';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import KeysContainer from './core/KeysContainer';
 import Settings from './core/Settings';
 
@@ -10,22 +10,31 @@ function App() {
  const [volume, setVolume] = useState(0.3);
  const [power, setPower] = useState(true);
 
- const handleKeyPress = (keys) => {
-  document.removeEventListener('keydown', keyPress);
-  document.addEventListener('keydown', keyPress);
-  function keyPress(e) {
-   for (const { keyTrigger, id } of keys) {
-       console.log(id)
-    if (e.key.toUpperCase() === keyTrigger.toUpperCase()) {
-     document.getElementById(id).click();
-    }
+ //  const handleKeyPress = (keys) => {
+ //   document.removeEventListener('keydown', keyPress);
+ //   document.addEventListener('keydown', keyPress);
+ //   function keyPress(e) {
+ //    for (const { keyTrigger, id } of keys) {
+ //        console.log(id)
+ //     if (e.key.toUpperCase() === keyTrigger.toUpperCase()) {
+ //      document.getElementById(keyTrigger).click();
+ //     }
+ //    }
+ //   }
+ //  };
+
+ //   useEffect(() => {
+ //    handleKeyPress(keys)
+ //   }, [keys]);
+
+ document.addEventListener('keydown', keyPress);
+ function keyPress(e) {
+  for (const { keyTrigger } of keys) {
+   if (e.key.toUpperCase() === keyTrigger.toUpperCase()) {
+    document.getElementById(keyTrigger).click();
    }
   }
- };
- 
-  useEffect(() => {
-   handleKeyPress(keys)
-  }, [keys]);
+ }
 
  return (
   <div className="app" id="display">
